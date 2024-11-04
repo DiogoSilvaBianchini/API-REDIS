@@ -1,10 +1,12 @@
 const {createClient} = require("redis")
 
-const redisConn = async () => {
-    const client = await createClient()
-    await client.connect()
-    await client.ping()
-    console.log("Redis conectado.")
+const client = createClient()
+
+const conn = () => {
+    client.connect()
+    client.ping()
 }
 
-module.exports = redisConn
+console.log("Redis conectado.")
+
+module.exports = {client, conn}
