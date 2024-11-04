@@ -1,0 +1,7 @@
+services:
+  redis:
+    image: redis/redis-stack-server:latest
+    volumes:
+      - ./docker/redis:/myredis/conf:usr/local/etc/redis
+    ports:
+      - 6379:6379
